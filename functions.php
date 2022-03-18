@@ -1,9 +1,11 @@
 <?php
 
 /**
- * Remove wp default margin top
+ * Adds dynamic title tag
  */
-add_theme_support('admin-bar', ['callback' => '__return_false']);
+function app_theme_support() {
+    add_theme_support('title-tag');
+}
 
 /**
  * Register and load styles
@@ -36,8 +38,6 @@ function app_register_styles() {
         'all'
     );
 }
-
-add_action('wp_enqueue_scripts', 'app_register_styles');
 
 /**
  * Register and load scripts
@@ -78,6 +78,15 @@ function app_register_scripts() {
     );
 
 }
+
+/**
+ * Remove wp default margin top
+ */
+add_theme_support('admin-bar', ['callback' => '__return_false']);
+
+add_action('after_setup_theme', 'app_theme_support');
+
+add_action('wp_enqueue_scripts', 'app_register_styles');
 
 add_action('wp_enqueue_scripts', 'app_register_scripts');
 
