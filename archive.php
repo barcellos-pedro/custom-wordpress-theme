@@ -1,0 +1,5 @@
+<?php
+
+// Display all posts
+
+?>
