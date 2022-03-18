@@ -10,7 +10,7 @@
     <meta name="author" content="https://www.youtube.com/watch?v=-h7gOJbIpmo&ab_channel=freeCodeCamp.org">
     <link rel="shortcut icon" href="images/logo.png">
     <!-- Load styles -->
-    <?php wp_head(); ?>
+    <?= wp_head(); ?>
 </head>
 
 <body>
@@ -57,3 +57,8 @@
             </div>
         </nav>
     </header>
+
+    <div class="main-wrapper">
+        <header class="page-title theme-bg-light text-center gradient py-5">
+            <h1 class="heading"><?= the_title(); ?></h1>
+        </header>
