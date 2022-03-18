@@ -84,10 +84,30 @@ function app_register_scripts() {
  */
 add_theme_support('admin-bar', ['callback' => '__return_false']);
 
+/**
+ * Set up menus
+ */
+function app_menus() {
+    // <location, description>
+    $locations = [
+        'primary' => 'Desktop Left Sidebar',
+        'footer' => 'Footer'
+    ];
+
+    /**
+     * Register menus to use on admin panel
+     * Appearance > Menus
+     */
+    register_nav_menus($locations);
+}
+
+// Hooks to wordpress run our functions
 add_action('after_setup_theme', 'app_theme_support');
 
 add_action('wp_enqueue_scripts', 'app_register_styles');
 
 add_action('wp_enqueue_scripts', 'app_register_scripts');
+
+add_action('init', 'app_menus');
 
 ?>
