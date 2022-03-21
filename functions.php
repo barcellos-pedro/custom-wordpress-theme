@@ -1,13 +1,15 @@
 <?php
 
 /**
- * Configure some content to display dynamically like:
- * - title,
- * - logo image
+ * Configure features for your theme 
+ * - Site Title,
+ * - Logo image
+ * - Post thumbnail
  */
 function app_theme_support() {
     add_theme_support('title-tag');
     add_theme_support('custom-logo');
+    add_theme_support('post-thumbnails');
 }
 
 /**
