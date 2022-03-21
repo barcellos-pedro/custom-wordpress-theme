@@ -16,7 +16,10 @@
 <body>
 
     <header class="header text-center">
-        <a class="site-title pt-lg-4 mb-0" href="index.html">SiteName.dev</a>
+        <a class="site-title pt-lg-4 mb-0" href="index.html">
+            <!-- Get Site Title -->
+            <?= get_bloginfo('name') ?>
+        </a>
 
         <nav class="navbar navbar-expand-lg navbar-dark">
 
@@ -25,9 +28,20 @@
             </button>
 
             <div id="navigation" class="collapse navbar-collapse flex-column">
-                <img class="mb-3 mx-auto logo" src="images/logo.png" alt="logo">
+                <?php
+                    // Get site identity logo path
+                    if( function_exists('the_custom_logo'))
+                    {
+                        $custom_logo_id = get_theme_mod('custom_logo');
+                        $logo = wp_get_attachment_image_src($custom_logo_id);
+                        $logo_path = $logo[0];
+                    }
+                ?>
+
+                <img class="mb-3 mx-auto logo" src="<?= $logo_path ?>" alt="logo">
 
                 <?php
+                    // Dynamic menu
                     wp_nav_menu([
                             'menu' => 'primary',
                             'container' => '',
@@ -51,5 +65,6 @@
 
     <div class="main-wrapper">
         <header class="page-title theme-bg-light text-center gradient py-5">
+            <!-- Get Page title -->
             <h1 class="heading"><?= the_title(); ?></h1>
         </header>
