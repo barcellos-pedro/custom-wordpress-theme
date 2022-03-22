@@ -8,6 +8,8 @@
         while (have_posts()) {
             the_post();
             
+            // Modularizing our app
+            // Get from the folder = {template-parts} file = {content-article}
             get_template_part('template-parts/content', 'article');
         }
     }
