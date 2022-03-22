@@ -13,6 +13,7 @@
             <span class="comment">
                 <a href="#comments">
                     <i class='fa fa-comment'></i>
+                    <!-- Comments count -->
                     <?= comments_number(); ?>
                 </a>
             </span>
@@ -22,4 +23,7 @@
     <?php
         the_content();
     ?>
+
+    <!-- Get Comments file -->
+    <?= comments_template(); ?>
 </div>
