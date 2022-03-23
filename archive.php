@@ -1,4 +1,4 @@
-<!--  Display All Posts -->
+<!--  Display Posts by tags, categories, date, etc -->
 
 <?= get_header(); ?>
 
