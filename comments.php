@@ -1,3 +1,5 @@
+<!--  Display Comments -->
+
 <div class="comments-wrapper">
     <div class="comments" id="comments">
         <div class="comments-header">
@@ -16,7 +18,7 @@
         </div><!-- .comments-inner -->
     </div><!-- comments -->
 
-    <hr class="" aria-hidden="true">
+    <hr aria-hidden="true">
     
     <?php
         // If current Post allow comments, show comment form
