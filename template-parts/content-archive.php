@@ -3,7 +3,10 @@
 <div class="container">
     <div class="post mb-5">
         <div class="media">
-            <img class="mr-3 img-fluid post-thumb d-none d-md-flex" src="images/thumbs/1.jpg" alt="image">
+            <img
+                class="mr-3 img-fluid post-thumb d-none d-md-flex"
+                src="<?= the_post_thumbnail_url(); ?>"
+                alt="<?= the_post_thumbnail_caption(); ?>">
             <div class="media-body">
                 <h3 class="title mb-1">
                     <a href="<?= the_permalink(); ?>">
