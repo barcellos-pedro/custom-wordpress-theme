@@ -8,6 +8,8 @@ Author: Pedro Reis
 Author URI: https://github.com/barcellos-pedro/custom-wordpress-theme
 */
 
+/* Global style that overwrites Wordpress */
+
 :root {
     --blue: #007bff;
     --indigo: #6610f2;
