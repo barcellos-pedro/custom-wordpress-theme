@@ -51,16 +51,20 @@
                 ?>
 
                 <hr>
-                <ul class="social-list list-inline py-3 mx-auto">
-                    <li class="list-inline-item"><a href="#"><i class="fab fa-twitter fa-fw"></i></a></li>
-                    <li class="list-inline-item"><a href="#"><i class="fab fa-linkedin-in fa-fw"></i></a></li>
-                    <li class="list-inline-item"><a href="#"><i class="fab fa-github-alt fa-fw"></i></a></li>
-                    <li class="list-inline-item"><a href="#"><i class="fab fa-stack-overflow fa-fw"></i></a></li>
-                    <li class="list-inline-item"><a href="#"><i class="fab fa-codepen fa-fw"></i></a></li>
-                </ul>
 
+                <?php
+                    // Display our custom widget passing the {id}
+                    // Social links Widget
+                    dynamic_sidebar('sidebar-2');
+                ?>
             </div>
         </nav>
+        <h4 style="color: white;">Tags</h4>
+        <?php
+            // Display our custom widget passing the {id}
+            // Tags Widget
+            dynamic_sidebar('sidebar-1');
+        ?>
     </header>
 
     <div class="main-wrapper">

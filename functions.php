@@ -21,6 +21,50 @@ function app_order_posts_by_date($query) {
         $query->set('order', 'DESC');
     }
 }
+
+/**
+ * Create widgets areas, so users can customize with drag & drop through admin panel
+ */
+function app_register_widgets_areas() {
+    // New Widget for Tags
+    register_sidebar(
+        [
+            'id' => 'sidebar-1',
+            'name' => 'Tags',
+            'description' => 'Tags Area',
+            'before_title' => '<h2>',
+            'after_title' => '</h2>',
+            'before_wiget' => '',
+            'after_widget' => '',
+        ]
+    );
+
+    // New Widget for Social Links
+    register_sidebar(
+        [
+            'id' => 'sidebar-2',
+            'name' => 'Social links',
+            'description' => 'Social Links Area',
+            'before_title' => '',
+            'after_title' => '',
+            'before_wiget' => '<ul class="social-list list-inline py-3 mx-auto">',
+            'after_widget' => '</ul>',
+        ]
+    );
+
+    // New Widget for Footer
+    register_sidebar(
+        [
+            'id' => 'footer-1',
+            'name' => 'Footer',
+            'description' => 'Footer Widget Area',
+            'before_title' => '',
+            'after_title' => '',
+            'before_wiget' => '',
+            'after_widget' => '',
+        ]
+    );
+}
  
 /**
  * Register and load styles
@@ -102,7 +146,7 @@ add_theme_support('admin-bar', ['callback' => '__return_false']);
 /**
  * Set up menus
  */
-function app_menus() {
+function app_register_menus() {
     // <location, description>
     $locations = [
         'primary' => 'Desktop Left Sidebar',
@@ -123,8 +167,10 @@ add_action('wp_enqueue_scripts', 'app_register_styles');
 
 add_action('wp_enqueue_scripts', 'app_register_scripts');
 
-add_action('init', 'app_menus');
+add_action('init', 'app_register_menus');
 
 add_action('pre_get_posts', 'app_order_posts_by_date');
+
+add_action('widgets_init', 'app_register_widgets_areas');
 
 ?>
