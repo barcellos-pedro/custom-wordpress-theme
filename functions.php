@@ -13,6 +13,16 @@ function app_theme_support() {
 }
 
 /**
+ * Order Posts from the latest
+ */
+function app_order_posts_by_date($query) {
+    if ($query->is_home() && $query->is_main_query()) {
+        $query->set('orderby', 'post_date');
+        $query->set('order', 'DESC');
+    }
+}
+ 
+/**
  * Register and load styles
  */
 function app_register_styles() {
@@ -114,5 +124,7 @@ add_action('wp_enqueue_scripts', 'app_register_styles');
 add_action('wp_enqueue_scripts', 'app_register_scripts');
 
 add_action('init', 'app_menus');
+
+add_action('pre_get_posts', 'app_order_posts_by_date');
 
 ?>

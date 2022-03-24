@@ -1,5 +1,5 @@
 <!-- Required and Fallback file -->
-<!-- In this case our fallback will display the posts listing, just like archive.php -->
+<!-- In this case our fallback will display the posts listing, just like content-archive.php -->
 
 <?= get_header(); ?>
 
